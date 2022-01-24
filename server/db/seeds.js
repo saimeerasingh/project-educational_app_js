@@ -1,0 +1,3 @@
+use countries;
+
+db.dropDatabase();
