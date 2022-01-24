@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Autocomplete from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import Typography from '@mui/material/Typography';
+
+import CountryCard from "../components/CountryCard";
 
 const CountriesContainer = () => {
 
@@ -26,7 +25,7 @@ const CountriesContainer = () => {
     const getCountryDetail = (newValue) => {
         fetch("https://restcountries.com/v3.1/name/" + newValue)
             .then(res => res.json())
-            .then(data => setCountriesData(data.map(x => ({ name: x.name.official, flag: x.flags.png, capital: x.capital[0], continent: x.continents[0] }))))
+            .then(data => setCountriesData(data.map(x => ({ name: x.name.official, flag: x.flags.png, capital: x.capital, continent: x.continents }))))
         console.log(countriesData);
     }
 
@@ -46,17 +45,7 @@ const CountriesContainer = () => {
                 renderInput={(params) => <TextField {...params} label="Countries" countries={countriesName} />}
             />
             
-    
-            <Typography sx={{ fontSize: 20 }} color="text.secondary" gutterBottom>
-                Country Name:{countriesData[0].name}
-                <br />
-                Country Capital:{countriesData[0].capital}
-                <br />
-                Country Continent:{countriesData[0].continent}
-            </Typography>
-            <img src={countriesData[0].flag} /> 
-            
-            
+            <CountryCard countriesData={countriesData}/>
         </div>
     );
 }
