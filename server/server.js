@@ -1,8 +1,7 @@
-// import { Server } from 'mongodb/lib/core';
 
 const express = require('express');
 const app = express();
-// const MongoClient = require('mongodb').MongoClient;
+const MongoClient = require('mongodb').MongoClient;
 const createRouter = require('./helpers/create_router');
 const cors = require('cors')
 
@@ -16,4 +15,3 @@ app.listen(5000, function () {
     console.log("App running on port 5000");
 })
 
-// export default Server;
