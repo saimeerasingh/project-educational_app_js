@@ -24,21 +24,6 @@ function App() {
 
   
   return (
-    <>
-     {/* <Box sx={{ flexGrow: 1 }}>
-      <Grid container spacing={2}>
-        <Grid CountriesContainer = {}>
-          
-        </Grid>
-        <Grid FunFactContainer={}>
-          
-        </Grid>
-        
-         
-        </Grid>
-      </Grid>
-    </Box>
-   </> */}
    <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2}>
         <Grid item xs={8}>
@@ -62,7 +47,6 @@ function App() {
         </Grid>
       </Grid>
     </Box>
-    </>
   );
  
 }

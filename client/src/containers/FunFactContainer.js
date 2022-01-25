@@ -1,11 +1,21 @@
 import React, { useState, useEffect } from "react";
-import FunFactButton from "../components/FunFactButton";
 import Button from '@mui/material/Button';
 import FunFactCard from "../components/FunFactCard";
+import Popper from '@mui/material/Popper';
+
 
 const FunFactContainer = () => {
 
     const [funfact, setFunfact] =  useState([]);
+    const [anchorEl, setAnchorEl] = React.useState(null);
+ 
+    const handleClick = (event) => {
+        setAnchorEl(anchorEl ? null : event.currentTarget);
+        getFunFacts();
+      };
+
+    const open = Boolean(anchorEl);
+    const id = open ? 'simple-popper' : undefined;
 
 
   const getFunFacts = () => {
@@ -19,15 +29,16 @@ const FunFactContainer = () => {
  return(
      <>
     
-    <Button
-     onClick={() => {
-       getFunFacts();
-     }}
-    >
+    <Button aria-describedby={id}   variant="outlined"
+     onClick = {handleClick}>
      Fun Facts
     </Button>
 
-    <FunFactCard funfact={funfact}/>
+    <Popper id={id} open={open} anchorEl={anchorEl}>
+    <FunFactCard funfact={funfact}/> 
+      </Popper>
+
+   
      </>
  )
 }
