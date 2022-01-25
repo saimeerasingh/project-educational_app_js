@@ -9,7 +9,7 @@ function App() {
 
 
   useEffect(() => {
-    fetch('http://localhost:5000/')
+    fetch('http://localhost:5000/api/funfacts')
     .then(res => res.json())
     .then(data => setMessage(data.message));
   })
@@ -18,7 +18,7 @@ function App() {
   return (
     <>
    <CountriesContainer/>
-   <p>The server said:{message}</p>
+   {message.map(x => x.funfact)}
    </>
   );
 }
