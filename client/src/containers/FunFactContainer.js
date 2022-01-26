@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Button from '@mui/material/Button';
 import FunFactCard from "../components/FunFactCard";
 import Popper from '@mui/material/Popper';
+import ClickAwayListener from '@mui/material/ClickAwayListener';
 
 
 
@@ -9,11 +10,16 @@ const FunFactContainer = () => {
 
     const [funfact, setFunfact] =  useState([]);
     const [anchorEl, setAnchorEl] = React.useState(null);
+    // const [open, setOpen] = React.useState(false);
  
     const handleClick = (event) => {
         setAnchorEl(anchorEl ? null : event.currentTarget);
+        // setOpen((prev) => !prev);
         getFunFacts();
       };
+    // const handleClickAway = () => {
+    //     setOpen(false)
+    // }
 
     const open = Boolean(anchorEl);
     const id = open ? 'simple-popper' : undefined;
@@ -29,7 +35,7 @@ const FunFactContainer = () => {
 
  return(
      <>
-    
+    {/* <ClickAwayListener onClickAway={handleClickAway}/> */}
     <Button aria-describedby={id}   variant="outlined"
      onClick = {handleClick}>
      Fun Facts
