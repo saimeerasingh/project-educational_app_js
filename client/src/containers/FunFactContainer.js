@@ -3,6 +3,7 @@ import Button from '@mui/material/Button';
 import FunFactCard from "../components/FunFactCard";
 import Popper from '@mui/material/Popper';
 import ClickAwayListener from '@mui/material/ClickAwayListener';
+import Box from '@mui/material/Box';
 
 
 
@@ -10,18 +11,18 @@ const FunFactContainer = () => {
 
     const [funfact, setFunfact] =  useState([]);
     const [anchorEl, setAnchorEl] = React.useState(null);
-    // const [open, setOpen] = React.useState(false);
+    const [open, setOpen] = React.useState(false);
  
     const handleClick = (event) => {
         setAnchorEl(anchorEl ? null : event.currentTarget);
-        // setOpen((prev) => !prev);
+        setOpen((prev) => !prev);
         getFunFacts();
       };
-    // const handleClickAway = () => {
-    //     setOpen(false)
-    // }
+    const handleClickAway = () => {
+        setOpen(false)
+    }
 
-    const open = Boolean(anchorEl);
+    // const open = Boolean(anchorEl);
     const id = open ? 'simple-popper' : undefined;
 
 
@@ -34,20 +35,22 @@ const FunFactContainer = () => {
 
 
  return(
-     <>
-    {/* <ClickAwayListener onClickAway={handleClickAway}/> */}
-    <Button aria-describedby={id}   variant="outlined"
-     onClick = {handleClick} size="large">
-     Fun Facts
-    </Button>
+     <div>
+        <ClickAwayListener onClickAway={handleClickAway}>
+            <Box >
 
-    <Popper id={id} open={open} anchorEl={anchorEl}>
-    <FunFactCard funfact={funfact}/> 
-      </Popper>
+                <Button aria-describedby={id}   variant="outlined"
+                onClick = {handleClick} size="large">
+                Fun Facts
+                </Button>
 
-   
-     </>
- )
+                <Popper id={id} open={open} anchorEl={anchorEl}>
+                    <FunFactCard funfact={funfact}/> 
+                </Popper>
+            </Box>
+        </ClickAwayListener>
+    </div>
+    )
 }
 
 export default FunFactContainer;
