@@ -37,7 +37,7 @@ const FunFactContainer = () => {
      <>
     {/* <ClickAwayListener onClickAway={handleClickAway}/> */}
     <Button aria-describedby={id}   variant="outlined"
-     onClick = {handleClick}>
+     onClick = {handleClick} size="large">
      Fun Facts
     </Button>
 
