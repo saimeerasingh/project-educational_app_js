@@ -48,7 +48,7 @@ const CountriesContainer = () => {
     return (
         <div>
          <ClickAwayListener onClickAway={handleClickAway}>
-            <Box>
+            <Box >
             
             <Autocomplete
                 disablePortal

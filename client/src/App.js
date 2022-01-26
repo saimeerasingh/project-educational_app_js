@@ -26,10 +26,12 @@ function App() {
   return (
    <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2}>
-        <Grid item xs={8}>
+        <Grid item xs={4}>
         <CountriesContainer/>
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={6}>
+        </Grid>
+        <Grid item xs={2}>
         <FunFactContainer/>
         </Grid>
         <Grid item xs={12}
