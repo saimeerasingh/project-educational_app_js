@@ -3,7 +3,7 @@ import './App.css';
 import CountriesContainer from './containers/CountriesContainer';
 import { useEffect, useState } from 'react';
 import FunFactContainer from './containers/FunFactContainer';
-import WorldMap from 'react-svg-worldmap';
+import WorldMap, {CountryContext}  from 'react-svg-worldmap';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 
@@ -20,9 +20,10 @@ function App() {
     {country: 'bd', value: 161062905}, // bangladesh
     {country: 'ru', value: 141944641}, // russia
     {country: 'mx', value: 127318112}, // mexico
+    {country: 'br', value: 212559204},
   ];
-
   
+
   return (
    <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2}>
@@ -44,7 +45,9 @@ function App() {
         color="red"
         value-suffix="people"
         size="xxl"
+        frame
         data={data}
+        richInteraction
         />
         </Grid>
       </Grid>
