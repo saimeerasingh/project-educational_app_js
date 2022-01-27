@@ -22,7 +22,7 @@ const FunFactCard = ({funfact}) => {
         }}
       >
         <Paper elevation={12} >
-        <Typography sx={{ fontSize: 20 }} color="text.secondary" gutterBottom>
+        <Typography variant="h5" color="text.secondary" gutterBottom>
         Country Name:{funfact.name}
         <br />
         Country Fun Fact:{funfact.funfact}
