@@ -22,7 +22,6 @@ const FunFactContainer = () => {
         setOpen(false)
     }
 
-    // const open = Boolean(anchorEl);
     const id = open ? 'simple-popper' : undefined;
 
 
