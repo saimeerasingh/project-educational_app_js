@@ -27,20 +27,20 @@ const CountryCard = ({countriesData}) => {
                     <img src={countriesData[0].flag} /> 
                 </Grid>
             <Grid item xs={12}>
-                <Typography xs={{ fontSize: 20 }} color="text.secondary" gutterBottom>
-                Country Name:{countriesData[0].name}
+                <Typography variant="h6" sx={{ fontWeight: 'bold' }} color="text.secondary" gutterBottom>
+                {countriesData[0].name}
                 </Typography>
             </Grid>
             <br />
             <Grid item xs={8}>
-                <Typography  sx={{ fontSize: 20 }} color="text.secondary" gutterBottom>
-                Country Capital:{countriesData[0].capital}
+                <Typography  variant="subtitle1" color="text.secondary" gutterBottom>
+                The Capital is {countriesData[0].capital}
                 </Typography>
             </Grid>
             <br />
             <Grid item xs={8}>
-                <Typography  sx={{ fontSize: 20 }} color="text.secondary" gutterBottom>
-                Country Continent:{countriesData[0].continent}
+                <Typography  variant="subtitle1" color="text.secondary" gutterBottom>
+                Its in {countriesData[0].continent}
                 </Typography>
             </Grid>
             <br />

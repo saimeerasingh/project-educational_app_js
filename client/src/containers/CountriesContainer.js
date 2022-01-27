@@ -4,7 +4,9 @@ import TextField from '@mui/material/TextField';
 import Popper from '@mui/material/Popper';
 import ClickAwayListener from '@mui/material/ClickAwayListener';
 import Box from '@mui/material/Box';
-
+import Stack from '@mui/material/Stack';
+import Paper from '@mui/material/Paper';
+import { styled } from '@mui/material/styles';
 import CountryCard from "../components/CountryCard";
 
 const CountriesContainer = () => {
@@ -24,7 +26,6 @@ const CountriesContainer = () => {
     }
 
     const id = open ? 'simple-popper' : undefined;
-
 
     useEffect(() => {
         getCountries()
@@ -49,7 +50,7 @@ const CountriesContainer = () => {
         <div>
          <ClickAwayListener onClickAway={handleClickAway}>
             <Box >
-            
+            <Stack spacing={12}>
             <Autocomplete
                 disablePortal
                 id="combo-box-demo"
@@ -61,10 +62,10 @@ const CountriesContainer = () => {
                 }}
                 renderInput={(params) => <TextField {...params} label="Countries" countries={countriesName} />}
             />
-            
             <Popper id={id} open={open} anchorEl={anchorEl}>
             <CountryCard countriesData={countriesData}/>
             </Popper>
+            </Stack>
             </Box>
             </ClickAwayListener>
         </div>
